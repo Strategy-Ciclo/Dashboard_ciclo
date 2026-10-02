@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclo - Inteligência em Recuperação</title>
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+        
+        * { box-sizing: border-box; }
+
+        :root {
+            --bg-dark: #0A0D1E; --ciclo-blue: #2B3576; --ciclo-magenta: #EA0888; 
+            --ciclo-cyan: #62C7F2; --text-light: #FFFFFF; --text-muted: #A0A5C0;
+            --font-family: 'Chillax', 'Outfit', sans-serif;
+        }
+
+        body { margin: 0; padding: 0; background-color: var(--bg-dark); color: var(--text-light); font-family: var(--font-family); display: flex; height: 100vh; overflow: hidden; }
+        aside { width: 300px; background-color: var(--ciclo-blue); padding: 30px 20px; display: flex; flex-direction: column; gap: 20px; box-shadow: 4px 0 15px rgba(0,0,0,0.5); z-index: 10; }
+        .logo-area h1 { font-weight: 700; margin: 0; font-size: 32px; display: flex; align-items: center; gap: 10px; }
+        .circle-logo { width: 24px; height: 24px; border: 5px solid var(--ciclo-cyan); border-top-color: var(--ciclo-magenta); border-right-color: var(--ciclo-blue); border-radius: 50%; }
+        .tagline { font-size: 12px; color: var(--ciclo-cyan); margin-top: 5px; font-weight: 300; }
+        
+        .filter-group { display: flex; flex-direction: column; gap: 6px; }
+        .filter-group label { font-size: 13px; font-weight: 600; color: var(--ciclo-cyan); }
+        .filter-group span { font-size: 10px; color: var(--text-muted); margin-top: -4px; }
+        .filter-group select { 
+            background-color: rgba(10, 13, 30, 0.5); color: var(--text-light); 
+            border: 1px solid rgba(255,255,255,0.1); padding: 8px; 
+            border-radius: 6px; font-family: inherit; outline: none;
+            height: 140px; overflow-y: auto; 
+        }
+        .filter-group select.small-select { height: 75px; } 
+        
+        .filter-group select option { padding: 4px; margin-bottom: 2px; border-radius: 4px; }
+        .filter-group select option:checked { background-color: var(--ciclo-cyan); color: var(--bg-dark); font-weight: 600; }
+
+        main { flex: 1; padding: 40px; overflow-y: auto; overflow-x: hidden; display: flex; flex-direction: column; }
+        
+        /* Novo layout do cabeçalho com a data no canto direito */
+        .main-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .header-title { margin: 0; font-size: 28px; font-weight: 600; }
+        .last-update { font-size: 13px; color: var(--text-muted); background-color: rgba(43, 53, 118, 0.4); padding: 8px 16px; border-radius: 20px; border: 1px solid rgba(98, 199, 242, 0.2); display: flex; align-items: center; gap: 8px; }
+        .last-update::before { content: ''; display: inline-block; width: 8px; height: 8px; background-color: var(--ciclo-cyan); border-radius: 50%; box-shadow: 0 0 8px var(--ciclo-cyan); }
+
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .kpi-card { background-color: var(--ciclo-blue); padding: 20px; border-radius: 12px; border-bottom: 4px solid var(--ciclo-cyan); position: relative; overflow: hidden; }
+        .kpi-card:nth-child(even) { border-bottom-color: var(--ciclo-magenta); }
+        .kpi-card h3 { margin: 0; font-size: 14px; color: var(--text-muted); font-weight: 400; }
+        .kpi-card .value { font-size: 32px; font-weight: 700; margin: 10px 0 0 0; }
+        
+        .chart-container { background-color: rgba(43, 53, 118, 0.3); border-radius: 16px; padding: 20px; border: 1px solid rgba(98, 199, 242, 0.2); height: 450px; margin-bottom: 40px; flex-shrink: 0; }
+        
+        .section-subtitle { font-size: 18px; font-weight: 600; color: var(--text-light); margin-bottom: 15px; border-left: 4px solid var(--ciclo-magenta); padding-left: 10px; }
+        
+        .mini-charts-row { display: flex; gap: 10px; margin-bottom: 40px; width: 100%; }
+        .mini-chart { flex: 1; background-color: rgba(43, 53, 118, 0.3); border-radius: 12px; border: 1px solid rgba(98, 199, 242, 0.2); height: 260px; min-width: 0; }
+    </style>
+</head>
+<body onload="updateDashboard()">
+    <aside>
+        <div class="logo-area">
+            <h1><div class="circle-logo"></div> ciclo</h1>
+            <div class="tagline">A gente planeja, executa e resolve.</div>
+        </div>
+
+        <div class="filter-group">
+            <label>Base</label>
+            <span>Segure CTRL para escolher mais de uma</span>
+            <select id="filtro-base" class="small-select" multiple>
+                <option value="Todas" selected>Todas as bases (Limpar)</option>
+                <option value="Amigável">Amigável (61 a 360 dias)</option>
+                <option value="Hard">Hard (361+ dias)</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label>Faixa de Atraso</label>
+            <span>Segure CTRL para escolher mais de uma</span>
+            <select id="filtro-atraso" multiple>
+                <option value="Todas" selected>Todas as faixas (Limpar)</option>
+                <option value="A. 61 a 90">A. 61 a 90</option>
+                <option value="B. 91 a 120">B. 91 a 120</option>
+                <option value="C. 121 a 180">C. 121 a 180</option>
+                <option value="D. 181 a 360">D. 181 a 360</option>
+                <option value="E. 361 a 420">E. 361 a 420</option>
+                <option value="F. 421 a 540">F. 421 a 540</option>
+                <option value="G. 541 a 720">G. 541 a 720</option>
+                <option value="H. 721+">H. 721+</option>
+                <option value="Fora da faixa">Fora da faixa</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label>Faixa de Saldo</label>
+            <span>Segure CTRL para escolher mais de uma</span>
+            <select id="filtro-saldo" multiple>
+                <option value="Todos" selected>Todos os saldos (Limpar)</option>
+                <option value="A. R$ 0 a R$ 500">A. R$ 0 a R$ 500</option>
+                <option value="B. R$ 500 a R$ 1.000">B. R$ 500 a R$ 1.000</option>
+                <option value="C. R$ 1.000 a R$ 2.500">C. R$ 1.000 a R$ 2.500</option>
+                <option value="D. R$ 2.500 a R$ 5.000">D. R$ 2.500 a R$ 5.000</option>
+                <option value="E. R$ 5.000 a R$ 7.000">E. R$ 5.000 a R$ 7.000</option>
+                <option value="F. R$ 7.000 a R$ 10.000">F. R$ 7.000 a R$ 10.000</option>
+                <option value="G. R$ 10.000 a R$ 15.000">G. R$ 10.000 a R$ 15.000</option>
+                <option value="H. R$ 15.000+">H. R$ 15.000+</option>
+                <option value="Saldo inválido">Saldo inválido</option>
+            </select>
+        </div>
+    </aside>
+
+    <main>
+        <div class="main-header">
+            <h2 class="header-title">Monitoramento de Estratégias</h2>
+            <div class="last-update" id="last-update">Atualizado em: --</div>
+        </div>
+        
+        <div class="kpi-grid">
+            <div class="kpi-card"><h3>Base Total de Clientes</h3><div class="value" id="kpi-base">0</div></div>
+            <div class="kpi-card"><h3>Saldo em Risco</h3><div class="value" id="kpi-saldo">R$ 0</div></div>
+            <div class="kpi-card"><h3>Total de Alôs (Hoje)</h3><div class="value" id="kpi-alo">0</div></div>
+            <div class="kpi-card"><h3>Acordos Fechados</h3><div class="value" style="color: var(--ciclo-magenta);" id="kpi-acordos">0</div></div>
+        </div>
+        
+        <div class="chart-container">
+            <div id="funnelChart" style="width:100%; height:100%;"></div>
+        </div>
+
+        <!-- Títulos ajustados -->
+        <h3 class="section-subtitle">Distribuição Global por Faixa de Atraso</h3>
+        <div class="mini-charts-row">
+            <div id="bar-atraso-tentativas" class="mini-chart"></div>
+            <div id="bar-atraso-alo" class="mini-chart"></div>
+            <div id="bar-atraso-cpc" class="mini-chart"></div>
+            <div id="bar-atraso-cpca" class="mini-chart"></div>
+            <div id="bar-atraso-acordos" class="mini-chart"></div>
+        </div>
+
+        <h3 class="section-subtitle" style="border-color: var(--ciclo-cyan);">Distribuição Global por Faixa de Saldo</h3>
+        <div class="mini-charts-row">
+            <div id="bar-saldo-tentativas" class="mini-chart"></div>
+            <div id="bar-saldo-alo" class="mini-chart"></div>
+            <div id="bar-saldo-cpc" class="mini-chart"></div>
+            <div id="bar-saldo-cpca" class="mini-chart"></div>
+            <div id="bar-saldo-acordos" class="mini-chart"></div>
+        </div>
+    </main>
+
+    <script>
+       const rawData = /*TOKEN_DADOS_COMPLETOS*/[{"faixa_atraso":"A. 61 a 90","faixa_saldo":"A. R$ 0 a R$ 500","kpi_base":3675,"kpi_saldo":826440.2463616667,"kpi_tentativas":2000,"kpi_alo":12,"kpi_cpc":1,"kpi_cpca":1,"kpi_acordos":0},{"faixa_atraso":"A. 61 a 90","faixa_saldo":"B. R$ 500 a R$ 1.000","kpi_base":1866,"kpi_saldo":1331731.0622125,"kpi_tentativas":8457,"kpi_alo":45,"kpi_cpc":0,"kpi_cpca":1,"kpi_acordos":0},{"faixa_atraso":"A. 61 a 90","faixa_saldo":"C. R$ 1.000 a R$ 2.500","kpi_base":2187,"kpi_saldo":3507955.3490366666,"kpi_tentativas":14616,"kpi_alo":59,"kpi_cpc":7,"kpi_cpca":6,"kpi_acordos":3},{"faixa_atraso":"A. 61 a 90","faixa_saldo":"D. R$ 2.500 a R$ 5.000","kpi_base":737,"kpi_saldo":2505246.5780133335,"kpi_tentativas":4999,"kpi_alo":26,"kpi_cpc":1,"kpi_cpca":1,"kpi_acordos":1},{"faixa_atraso":"A. 61 a 90","faixa_saldo":"E. R$ 5.000 a R$ 7.000","kpi_base":134,"kpi_saldo":772665.2676016666,"kpi_tentativas":921,"kpi_alo":2,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"A. 61 a 90","faixa_saldo":"F. R$ 7.000 a R$ 10.000","kpi_base":50,"kpi_saldo":406962.7558533333,"kpi_tentativas":300,"kpi_alo":1,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"A. 61 a 90","faixa_saldo":"G. R$ 10.000 a R$ 15.000","kpi_base":18,"kpi_saldo":206110.6744966667,"kpi_tentativas":115,"kpi_alo":0,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"A. 61 a 90","faixa_saldo":"H. R$ 15.000+","kpi_base":4,"kpi_saldo":70904.01,"kpi_tentativas":28,"kpi_alo":0,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"B. 91 a 120","faixa_saldo":"A. R$ 0 a R$ 500","kpi_base":3636,"kpi_saldo":825910.3440883333,"kpi_tentativas":501,"kpi_alo":6,"kpi_cpc":1,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"B. 91 a 120","faixa_saldo":"B. R$ 500 a R$ 1.000","kpi_base":1885,"kpi_saldo":1345748.4127383332,"kpi_tentativas":5631,"kpi_alo":39,"kpi_cpc":1,"kpi_cpca":1,"kpi_acordos":1},{"faixa_atraso":"B. 91 a 120","faixa_saldo":"C. R$ 1.000 a R$ 2.500","kpi_base":2339,"kpi_saldo":3751045.9718633331,"kpi_tentativas":13640,"kpi_alo":73,"kpi_cpc":1,"kpi_cpca":1,"kpi_acordos":0},{"faixa_atraso":"B. 91 a 120","faixa_saldo":"D. R$ 2.500 a R$ 5.000","kpi_base":1018,"kpi_saldo":3477251.5625966666,"kpi_tentativas":6622,"kpi_alo":49,"kpi_cpc":3,"kpi_cpca":2,"kpi_acordos":2},{"faixa_atraso":"B. 91 a 120","faixa_saldo":"E. R$ 5.000 a R$ 7.000","kpi_base":207,"kpi_saldo":1208092.3397766666,"kpi_tentativas":1349,"kpi_alo":1,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"B. 91 a 120","faixa_saldo":"F. R$ 7.000 a R$ 10.000","kpi_base":77,"kpi_saldo":626347.78301,"kpi_tentativas":497,"kpi_alo":4,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"B. 91 a 120","faixa_saldo":"G. R$ 10.000 a R$ 15.000","kpi_base":24,"kpi_saldo":277481.47314,"kpi_tentativas":153,"kpi_alo":1,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"B. 91 a 120","faixa_saldo":"H. R$ 15.000+","kpi_base":3,"kpi_saldo":58563.586,"kpi_tentativas":19,"kpi_alo":0,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"C. 121 a 180","faixa_saldo":"A. R$ 0 a R$ 500","kpi_base":5907,"kpi_saldo":1383674.0138049999,"kpi_tentativas":317,"kpi_alo":4,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"C. 121 a 180","faixa_saldo":"B. R$ 500 a R$ 1.000","kpi_base":2983,"kpi_saldo":2155335.9387641666,"kpi_tentativas":6545,"kpi_alo":41,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"C. 121 a 180","faixa_saldo":"C. R$ 1.000 a R$ 2.500","kpi_base":4044,"kpi_saldo":6576874.5479525002,"kpi_tentativas":22618,"kpi_alo":141,"kpi_cpc":4,"kpi_cpca":5,"kpi_acordos":2},{"faixa_atraso":"C. 121 a 180","faixa_saldo":"D. R$ 2.500 a R$ 5.000","kpi_base":2488,"kpi_saldo":8694349.0494891666,"kpi_tentativas":16680,"kpi_alo":85,"kpi_cpc":5,"kpi_cpca":3,"kpi_acordos":0},{"faixa_atraso":"C. 121 a 180","faixa_saldo":"E. R$ 5.000 a R$ 7.000","kpi_base":631,"kpi_saldo":3676965.3977166666,"kpi_tentativas":4231,"kpi_alo":27,"kpi_cpc":3,"kpi_cpca":3,"kpi_acordos":0},{"faixa_atraso":"C. 121 a 180","faixa_saldo":"F. R$ 7.000 a R$ 10.000","kpi_base":248,"kpi_saldo":2009993.6935666667,"kpi_tentativas":1535,"kpi_alo":20,"kpi_cpc":1,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"C. 121 a 180","faixa_saldo":"G. R$ 10.000 a R$ 15.000","kpi_base":65,"kpi_saldo":759368.4120066667,"kpi_tentativas":378,"kpi_alo":2,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"C. 121 a 180","faixa_saldo":"H. R$ 15.000+","kpi_base":8,"kpi_saldo":131533.599,"kpi_tentativas":50,"kpi_alo":0,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"D. 181 a 360","faixa_saldo":"A. R$ 0 a R$ 500","kpi_base":11341,"kpi_saldo":2814722.0928075002,"kpi_tentativas":3,"kpi_alo":0,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"D. 181 a 360","faixa_saldo":"B. R$ 500 a R$ 1.000","kpi_base":5289,"kpi_saldo":3741911.4817666668,"kpi_tentativas":4359,"kpi_alo":46,"kpi_cpc":2,"kpi_cpca":1,"kpi_acordos":1},{"faixa_atraso":"D. 181 a 360","faixa_saldo":"C. R$ 1.000 a R$ 2.500","kpi_base":8230,"kpi_saldo":13575385.8062316664,"kpi_tentativas":43135,"kpi_alo":288,"kpi_cpc":6,"kpi_cpca":4,"kpi_acordos":1},{"faixa_atraso":"D. 181 a 360","faixa_saldo":"D. R$ 2.500 a R$ 5.000","kpi_base":6925,"kpi_saldo":24852083.6503816657,"kpi_tentativas":44680,"kpi_alo":331,"kpi_cpc":9,"kpi_cpca":8,"kpi_acordos":2},{"faixa_atraso":"D. 181 a 360","faixa_saldo":"E. R$ 5.000 a R$ 7.000","kpi_base":2485,"kpi_saldo":14569162.071170833,"kpi_tentativas":16553,"kpi_alo":106,"kpi_cpc":3,"kpi_cpca":1,"kpi_acordos":0},{"faixa_atraso":"D. 181 a 360","faixa_saldo":"F. R$ 7.000 a R$ 10.000","kpi_base":1415,"kpi_saldo":11621574.6034333333,"kpi_tentativas":8925,"kpi_alo":42,"kpi_cpc":4,"kpi_cpca":2,"kpi_acordos":0},{"faixa_atraso":"D. 181 a 360","faixa_saldo":"G. R$ 10.000 a R$ 15.000","kpi_base":346,"kpi_saldo":3976496.3955724998,"kpi_tentativas":2094,"kpi_alo":19,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"D. 181 a 360","faixa_saldo":"H. R$ 15.000+","kpi_base":16,"kpi_saldo":276475.6723883334,"kpi_tentativas":92,"kpi_alo":1,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"E. 361 a 420","faixa_saldo":"A. R$ 0 a R$ 500","kpi_base":3697,"kpi_saldo":921048.3066508333,"kpi_tentativas":35,"kpi_alo":1,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"E. 361 a 420","faixa_saldo":"B. R$ 500 a R$ 1.000","kpi_base":1679,"kpi_saldo":1163083.7048175,"kpi_tentativas":143,"kpi_alo":1,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"E. 361 a 420","faixa_saldo":"C. R$ 1.000 a R$ 2.500","kpi_base":2617,"kpi_saldo":4447647.7861783337,"kpi_tentativas":1371,"kpi_alo":13,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"E. 361 a 420","faixa_saldo":"D. R$ 2.500 a R$ 5.000","kpi_base":2546,"kpi_saldo":9311713.202798333,"kpi_tentativas":1981,"kpi_alo":18,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"E. 361 a 420","faixa_saldo":"E. R$ 5.000 a R$ 7.000","kpi_base":1399,"kpi_saldo":8260387.3385866666,"kpi_tentativas":1203,"kpi_alo":12,"kpi_cpc":1,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"E. 361 a 420","faixa_saldo":"F. R$ 7.000 a R$ 10.000","kpi_base":783,"kpi_saldo":6485950.4192599999,"kpi_tentativas":686,"kpi_alo":5,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"E. 361 a 420","faixa_saldo":"G. R$ 10.000 a R$ 15.000","kpi_base":254,"kpi_saldo":2901731.0724116666,"kpi_tentativas":216,"kpi_alo":2,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"E. 361 a 420","faixa_saldo":"H. R$ 15.000+","kpi_base":11,"kpi_saldo":185995.9446233333,"kpi_tentativas":5,"kpi_alo":0,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"F. 421 a 540","faixa_saldo":"A. R$ 0 a R$ 500","kpi_base":4591,"kpi_saldo":1231134.86629,"kpi_tentativas":80,"kpi_alo":2,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"F. 421 a 540","faixa_saldo":"B. R$ 500 a R$ 1.000","kpi_base":2122,"kpi_saldo":1407529.9124266666,"kpi_tentativas":251,"kpi_alo":3,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"F. 421 a 540","faixa_saldo":"C. R$ 1.000 a R$ 2.500","kpi_base":3879,"kpi_saldo":6683280.908915,"kpi_tentativas":2989,"kpi_alo":43,"kpi_cpc":3,"kpi_cpca":4,"kpi_acordos":2},{"faixa_atraso":"F. 421 a 540","faixa_saldo":"D. R$ 2.500 a R$ 5.000","kpi_base":3805,"kpi_saldo":13995487.6023183335,"kpi_tentativas":4051,"kpi_alo":50,"kpi_cpc":3,"kpi_cpca":3,"kpi_acordos":0},{"faixa_atraso":"F. 421 a 540","faixa_saldo":"E. R$ 5.000 a R$ 7.000","kpi_base":2066,"kpi_saldo":12202975.6440316662,"kpi_tentativas":2219,"kpi_alo":32,"kpi_cpc":2,"kpi_cpca":1,"kpi_acordos":0},{"faixa_atraso":"F. 421 a 540","faixa_saldo":"F. R$ 7.000 a R$ 10.000","kpi_base":1224,"kpi_saldo":10200408.7240449991,"kpi_tentativas":1334,"kpi_alo":17,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"F. 421 a 540","faixa_saldo":"G. R$ 10.000 a R$ 15.000","kpi_base":369,"kpi_saldo":4235220.5581033332,"kpi_tentativas":386,"kpi_alo":10,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"F. 421 a 540","faixa_saldo":"H. R$ 15.000+","kpi_base":7,"kpi_saldo":110799.925,"kpi_tentativas":9,"kpi_alo":0,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"Fora da faixa","faixa_saldo":"A. R$ 0 a R$ 500","kpi_base":29,"kpi_saldo":4683.2433733333,"kpi_tentativas":0,"kpi_alo":0,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"Fora da faixa","faixa_saldo":"B. R$ 500 a R$ 1.000","kpi_base":6,"kpi_saldo":4327.2251733333,"kpi_tentativas":0,"kpi_alo":0,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"Fora da faixa","faixa_saldo":"C. R$ 1.000 a R$ 2.500","kpi_base":3,"kpi_saldo":4945.7,"kpi_tentativas":0,"kpi_alo":0,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"Fora da faixa","faixa_saldo":"D. R$ 2.500 a R$ 5.000","kpi_base":3,"kpi_saldo":13140.4,"kpi_tentativas":0,"kpi_alo":0,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"G. 541 a 720","faixa_saldo":"A. R$ 0 a R$ 500","kpi_base":3676,"kpi_saldo":1139820.6479166667,"kpi_tentativas":99,"kpi_alo":2,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"G. 541 a 720","faixa_saldo":"B. R$ 500 a R$ 1.000","kpi_base":2864,"kpi_saldo":1841916.0705833333,"kpi_tentativas":482,"kpi_alo":6,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"G. 541 a 720","faixa_saldo":"C. R$ 1.000 a R$ 2.500","kpi_base":5239,"kpi_saldo":9072592.6455833334,"kpi_tentativas":4225,"kpi_alo":87,"kpi_cpc":2,"kpi_cpca":2,"kpi_acordos":0},{"faixa_atraso":"G. 541 a 720","faixa_saldo":"D. R$ 2.500 a R$ 5.000","kpi_base":5242,"kpi_saldo":19168433.5338333324,"kpi_tentativas":5586,"kpi_alo":90,"kpi_cpc":5,"kpi_cpca":4,"kpi_acordos":0},{"faixa_atraso":"G. 541 a 720","faixa_saldo":"E. R$ 5.000 a R$ 7.000","kpi_base":2308,"kpi_saldo":13630891.1813333333,"kpi_tentativas":2523,"kpi_alo":46,"kpi_cpc":2,"kpi_cpca":1,"kpi_acordos":0},{"faixa_atraso":"G. 541 a 720","faixa_saldo":"F. R$ 7.000 a R$ 10.000","kpi_base":1181,"kpi_saldo":9907125.1900833342,"kpi_tentativas":1271,"kpi_alo":17,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"G. 541 a 720","faixa_saldo":"G. R$ 10.000 a R$ 15.000","kpi_base":299,"kpi_saldo":3356847.8775833333,"kpi_tentativas":327,"kpi_alo":3,"kpi_cpc":1,"kpi_cpca":1,"kpi_acordos":0},{"faixa_atraso":"G. 541 a 720","faixa_saldo":"H. R$ 15.000+","kpi_base":2,"kpi_saldo":32008.6666666667,"kpi_tentativas":3,"kpi_alo":0,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"H. 721+","faixa_saldo":"A. R$ 0 a R$ 500","kpi_base":1990,"kpi_saldo":705866.188,"kpi_tentativas":75,"kpi_alo":4,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"H. 721+","faixa_saldo":"B. R$ 500 a R$ 1.000","kpi_base":4943,"kpi_saldo":3367303.3100000001,"kpi_tentativas":404,"kpi_alo":7,"kpi_cpc":1,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"H. 721+","faixa_saldo":"C. R$ 1.000 a R$ 2.500","kpi_base":10715,"kpi_saldo":18109592.5864166655,"kpi_tentativas":6088,"kpi_alo":101,"kpi_cpc":1,"kpi_cpca":2,"kpi_acordos":0},{"faixa_atraso":"H. 721+","faixa_saldo":"D. R$ 2.500 a R$ 5.000","kpi_base":6792,"kpi_saldo":24250204.0003333315,"kpi_tentativas":5277,"kpi_alo":104,"kpi_cpc":5,"kpi_cpca":4,"kpi_acordos":1},{"faixa_atraso":"H. 721+","faixa_saldo":"E. R$ 5.000 a R$ 7.000","kpi_base":2188,"kpi_saldo":12905911.0059999991,"kpi_tentativas":1806,"kpi_alo":31,"kpi_cpc":2,"kpi_cpca":1,"kpi_acordos":0},{"faixa_atraso":"H. 721+","faixa_saldo":"F. R$ 7.000 a R$ 10.000","kpi_base":763,"kpi_saldo":6355650.600333333,"kpi_tentativas":678,"kpi_alo":7,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0},{"faixa_atraso":"H. 721+","faixa_saldo":"G. R$ 10.000 a R$ 15.000","kpi_base":255,"kpi_saldo":2978688.9759999998,"kpi_tentativas":209,"kpi_alo":1,"kpi_cpc":0,"kpi_cpca":0,"kpi_acordos":0}]/*FIM_TOKEN_DADOS_COMPLETOS*/;
+        const horaAtualizacao = /*TOKEN_HORA*/"02/10/2026 às 14:49"/*FIM_TOKEN_HORA*/;
+
+        // Injeta a data e hora na tela logo que a página carrega
+        document.getElementById('last-update').innerHTML = `Atualizado em <b>${horaAtualizacao}</b>`;
+        function initDashboard() {
+            updateDashboard(); 
+            renderMiniCharts(); 
+        }
+
+        function getValoresSelecionados(selectId) {
+            const select = document.getElementById(selectId);
+            const selecionados = [];
+            for (let i = 0; i < select.selectedOptions.length; i++) {
+                selecionados.push(select.selectedOptions[i].value);
+            }
+            return selecionados;
+        }
+
+        function updateDashboard() {
+            const filtrosBase = getValoresSelecionados('filtro-base');
+            const filtrosAtraso = getValoresSelecionados('filtro-atraso');
+            const filtrosSaldo = getValoresSelecionados('filtro-saldo');
+            let dadosFiltrados = rawData;
+            
+            if (filtrosBase.length > 0 && !filtrosBase.includes('Todas')) {
+                const faixasAmigavel = ['A. 61 a 90', 'B. 91 a 120', 'C. 121 a 180', 'D. 181 a 360'];
+                const faixasHard = ['E. 361 a 420', 'F. 421 a 540', 'G. 541 a 720', 'H. 721+'];
+                let faixasPermitidas = [];
+                
+                if (filtrosBase.includes('Amigável')) faixasPermitidas.push(...faixasAmigavel);
+                if (filtrosBase.includes('Hard')) faixasPermitidas.push(...faixasHard);
+                
+                dadosFiltrados = dadosFiltrados.filter(d => faixasPermitidas.includes(d.faixa_atraso));
+            }
+
+            if (filtrosAtraso.length > 0 && !filtrosAtraso.includes('Todas')) {
+                dadosFiltrados = dadosFiltrados.filter(d => filtrosAtraso.includes(d.faixa_atraso));
+            }
+            
+            if (filtrosSaldo.length > 0 && !filtrosSaldo.includes('Todos')) {
+                dadosFiltrados = dadosFiltrados.filter(d => filtrosSaldo.includes(d.faixa_saldo));
+            }
+
+            let tBase = 0, tSaldo = 0, tTentativas = 0, tAlo = 0, tCpc = 0, tCpca = 0, tAcordos = 0;
+            
+            dadosFiltrados.forEach(d => {
+                tBase += d.kpi_base || 0; tSaldo += d.kpi_saldo || 0;
+                tTentativas += d.kpi_tentativas || 0; tAlo += d.kpi_alo || 0;
+                tCpc += d.kpi_cpc || 0; tCpca += d.kpi_cpca || 0; tAcordos += d.kpi_acordos || 0;
+            });
+
+            document.getElementById('kpi-base').innerText = tBase.toLocaleString('pt-BR');
+            document.getElementById('kpi-saldo').innerText = tSaldo >= 1000000 ? `R$ ${(tSaldo/1000000).toFixed(1)}M` : `R$ ${(tSaldo/1000).toFixed(1)}k`;
+            document.getElementById('kpi-alo').innerText = tAlo.toLocaleString('pt-BR');
+            document.getElementById('kpi-acordos').innerText = tAcordos.toLocaleString('pt-BR');
+
+            const textValues = [
+                `<b>Base Total</b><br>${tBase.toLocaleString('pt-BR')}`,
+                `<b>Tentativas</b><br>${tTentativas.toLocaleString('pt-BR')}`,
+                `<b>Alô</b><br>${tAlo.toLocaleString('pt-BR')}`,
+                `<b>CPC</b><br>${tCpc.toLocaleString('pt-BR')}`,
+                `<b>CPCA</b><br>${tCpca.toLocaleString('pt-BR')}`,
+                `<b>Acordos</b><br>${tAcordos.toLocaleString('pt-BR')}`
+            ];
+
+            const layout = {
+                title: { text: '', font: { color: '#FFFFFF', size: 20, family: 'Outfit' } },
+                margin: { l: 100, r: 20, t: 20, b: 20 },
+                paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'rgba(0,0,0,0)',
+                font: { color: '#FFFFFF', family: 'Outfit', size: 14 },
+                xaxis: { fixedrange: true }, yaxis: { fixedrange: true }, dragmode: false
+            };
+
+            Plotly.react('funnelChart', [{
+                type: 'funnel', y: ['Base', 'Tentativas', 'Alô', 'CPC', 'CPCA', 'Acordos'],
+                x: [100, 85, 70, 55, 40, 25], text: textValues, textinfo: 'text', hoverinfo: 'text',
+                marker: { color: ['#62C7F2', '#4B99CA', '#356AA3', '#2B3576', '#8A1E7F', '#EA0888'] }
+            }], layout, { responsive: true, displayModeBar: false, scrollZoom: false });
+        }
+
+        function renderMiniCharts() {
+            function drawBarChart(containerId, groupByKey, metricKey, chartTitle, barColor) {
+                const aglomerado = {};
+                rawData.forEach(d => {
+                    const chave = d[groupByKey];
+                    aglomerado[chave] = (aglomerado[chave] || 0) + (d[metricKey] || 0);
+                });
+
+                let arrayDados = Object.keys(aglomerado).map(k => ({ categoria: k, valor: aglomerado[k] }));
+                arrayDados = arrayDados.filter(d => d.valor > 0);
+                arrayDados.sort((a, b) => a.valor - b.valor);
+
+                const trace = {
+                    type: 'bar', orientation: 'h',
+                    y: arrayDados.map(d => d.categoria),
+                    x: arrayDados.map(d => d.valor),
+                    marker: { color: barColor },
+                    text: arrayDados.map(d => d.valor.toLocaleString('pt-BR')),
+                    textposition: 'auto',
+                    insidetextfont: { color: '#0A0D1E', size: 10, family: 'Outfit, sans-serif' }, 
+                    outsidetextfont: { color: '#FFFFFF', size: 10, family: 'Outfit, sans-serif' },
+                    hoverinfo: 'none'
+                };
+
+                const layout = {
+                    title: { text: chartTitle, font: { color: '#FFFFFF', size: 14, family: 'Outfit' } },
+                    margin: { l: 140, r: 40, t: 30, b: 20 }, 
+                    paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'rgba(0,0,0,0)',
+                    xaxis: { visible: false, fixedrange: true }, 
+                    yaxis: { tickfont: { color: '#A0A5C0', size: 10 }, fixedrange: true },
+                    dragmode: false
+                };
+
+                Plotly.newPlot(containerId, [trace], layout, { displayModeBar: false, responsive: true, scrollZoom: false });
+            }
+
+            const corAtraso = '#62C7F2';
+            drawBarChart('bar-atraso-tentativas', 'faixa_atraso', 'kpi_tentativas', 'Tentativas', corAtraso);
+            drawBarChart('bar-atraso-alo', 'faixa_atraso', 'kpi_alo', 'Alô', corAtraso);
+            drawBarChart('bar-atraso-cpc', 'faixa_atraso', 'kpi_cpc', 'CPC', corAtraso);
+            drawBarChart('bar-atraso-cpca', 'faixa_atraso', 'kpi_cpca', 'CPCA', corAtraso);
+            drawBarChart('bar-atraso-acordos', 'faixa_atraso', 'kpi_acordos', 'Acordos', corAtraso);
+
+            const corSaldo = '#EA0888';
+            drawBarChart('bar-saldo-tentativas', 'faixa_saldo', 'kpi_tentativas', 'Tentativas', corSaldo);
+            drawBarChart('bar-saldo-alo', 'faixa_saldo', 'kpi_alo', 'Alô', corSaldo);
+            drawBarChart('bar-saldo-cpc', 'faixa_saldo', 'kpi_cpc', 'CPC', corSaldo);
+            drawBarChart('bar-saldo-cpca', 'faixa_saldo', 'kpi_cpca', 'CPCA', corSaldo);
+            drawBarChart('bar-saldo-acordos', 'faixa_saldo', 'kpi_acordos', 'Acordos', corSaldo);
+        }
+
+        document.getElementById('filtro-base').addEventListener('change', updateDashboard);
+        document.getElementById('filtro-atraso').addEventListener('change', updateDashboard);
+        document.getElementById('filtro-saldo').addEventListener('change', updateDashboard);
+        
+        window.onload = initDashboard;
+    </script>
+</body>
+</html>
