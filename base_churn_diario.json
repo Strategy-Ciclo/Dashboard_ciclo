@@ -37,7 +37,7 @@
     "total_base_dia":6700,
     "novos_entrantes":11,
     "saidas_base":36,
-    "baixas_arquivo":0
+    "baixas_arquivo":2
   },
   {
     "data_estoque":"2026-10-23",
@@ -107,7 +107,7 @@
     "total_base_dia":10998,
     "novos_entrantes":36,
     "saidas_base":38,
-    "baixas_arquivo":0
+    "baixas_arquivo":1
   },
   {
     "data_estoque":"2026-10-23",
@@ -137,7 +137,7 @@
     "total_base_dia":26833,
     "novos_entrantes":48,
     "saidas_base":73,
-    "baixas_arquivo":0
+    "baixas_arquivo":1
   },
   {
     "data_estoque":"2026-10-23",
@@ -167,7 +167,7 @@
     "total_base_dia":8820,
     "novos_entrantes":5,
     "saidas_base":7,
-    "baixas_arquivo":0
+    "baixas_arquivo":1
   },
   {
     "data_estoque":"2026-10-23",
@@ -197,7 +197,7 @@
     "total_base_dia":17368,
     "novos_entrantes":13,
     "saidas_base":14,
-    "baixas_arquivo":0
+    "baixas_arquivo":1
   },
   {
     "data_estoque":"2026-10-23",
@@ -217,7 +217,7 @@
     "total_base_dia":20302,
     "novos_entrantes":15,
     "saidas_base":19,
-    "baixas_arquivo":0
+    "baixas_arquivo":1
   },
   {
     "data_estoque":"2026-10-23",
@@ -257,7 +257,7 @@
     "total_base_dia":4,
     "novos_entrantes":0,
     "saidas_base":0,
-    "baixas_arquivo":0
+    "baixas_arquivo":1
   },
   {
     "data_estoque":"2026-10-22",
@@ -267,7 +267,7 @@
     "total_base_dia":1950,
     "novos_entrantes":4,
     "saidas_base":3,
-    "baixas_arquivo":0
+    "baixas_arquivo":4
   },
   {
     "data_estoque":"2026-10-22",
@@ -277,7 +277,7 @@
     "total_base_dia":6731,
     "novos_entrantes":4,
     "saidas_base":35,
-    "baixas_arquivo":0
+    "baixas_arquivo":20
   },
   {
     "data_estoque":"2026-10-22",
@@ -287,7 +287,7 @@
     "total_base_dia":10,
     "novos_entrantes":0,
     "saidas_base":2,
-    "baixas_arquivo":0
+    "baixas_arquivo":1
   },
   {
     "data_estoque":"2026-10-22",
@@ -297,7 +297,7 @@
     "total_base_dia":472,
     "novos_entrantes":0,
     "saidas_base":1,
-    "baixas_arquivo":0
+    "baixas_arquivo":1
   },
   {
     "data_estoque":"2026-10-22",
@@ -307,7 +307,7 @@
     "total_base_dia":2359,
     "novos_entrantes":1,
     "saidas_base":2,
-    "baixas_arquivo":0
+    "baixas_arquivo":3
   },
   {
     "data_estoque":"2026-10-22",
@@ -317,7 +317,7 @@
     "total_base_dia":6419,
     "novos_entrantes":1,
     "saidas_base":19,
-    "baixas_arquivo":0
+    "baixas_arquivo":12
   },
   {
     "data_estoque":"2026-10-22",
@@ -327,7 +327,7 @@
     "total_base_dia":805,
     "novos_entrantes":0,
     "saidas_base":0,
-    "baixas_arquivo":0
+    "baixas_arquivo":1
   },
   {
     "data_estoque":"2026-10-22",
@@ -337,7 +337,7 @@
     "total_base_dia":4469,
     "novos_entrantes":1,
     "saidas_base":1,
-    "baixas_arquivo":0
+    "baixas_arquivo":4
   },
   {
     "data_estoque":"2026-10-22",
@@ -347,7 +347,7 @@
     "total_base_dia":11000,
     "novos_entrantes":9,
     "saidas_base":26,
-    "baixas_arquivo":0
+    "baixas_arquivo":17
   },
   {
     "data_estoque":"2026-10-22",
@@ -367,7 +367,7 @@
     "total_base_dia":9257,
     "novos_entrantes":0,
     "saidas_base":1,
-    "baixas_arquivo":0
+    "baixas_arquivo":3
   },
   {
     "data_estoque":"2026-10-22",
@@ -377,7 +377,7 @@
     "total_base_dia":26857,
     "novos_entrantes":6,
     "saidas_base":62,
-    "baixas_arquivo":0
+    "baixas_arquivo":22
   },
   {
     "data_estoque":"2026-10-22",
@@ -407,7 +407,7 @@
     "total_base_dia":8822,
     "novos_entrantes":1,
     "saidas_base":6,
-    "baixas_arquivo":0
+    "baixas_arquivo":5
   },
   {
     "data_estoque":"2026-10-22",
@@ -437,7 +437,7 @@
     "total_base_dia":17369,
     "novos_entrantes":1,
     "saidas_base":6,
-    "baixas_arquivo":0
+    "baixas_arquivo":7
   },
   {
     "data_estoque":"2026-10-22",
@@ -457,7 +457,7 @@
     "total_base_dia":20307,
     "novos_entrantes":4,
     "saidas_base":9,
-    "baixas_arquivo":0
+    "baixas_arquivo":6
   },
   {
     "data_estoque":"2026-10-22",
@@ -467,7 +467,7 @@
     "total_base_dia":9169,
     "novos_entrantes":3,
     "saidas_base":5,
-    "baixas_arquivo":0
+    "baixas_arquivo":4
   },
   {
     "data_estoque":"2026-10-22",
@@ -477,7 +477,7 @@
     "total_base_dia":19773,
     "novos_entrantes":0,
     "saidas_base":10,
-    "baixas_arquivo":0
+    "baixas_arquivo":6
   },
   {
     "data_estoque":"2026-10-21",
@@ -497,7 +497,7 @@
     "total_base_dia":2,
     "novos_entrantes":0,
     "saidas_base":3,
-    "baixas_arquivo":0
+    "baixas_arquivo":1
   },
   {
     "data_estoque":"2026-10-21",
@@ -507,7 +507,7 @@
     "total_base_dia":1998,
     "novos_entrantes":98,
     "saidas_base":2,
-    "baixas_arquivo":0
+    "baixas_arquivo":1
   },
   {
     "data_estoque":"2026-10-21",
@@ -517,7 +517,7 @@
     "total_base_dia":6964,
     "novos_entrantes":195,
     "saidas_base":32,
-    "baixas_arquivo":2
+    "baixas_arquivo":53
   },
   {
     "data_estoque":"2026-10-21",
@@ -527,7 +527,7 @@
     "total_base_dia":12,
     "novos_entrantes":1,
     "saidas_base":3,
-    "baixas_arquivo":0
+    "baixas_arquivo":3
   },
   {
     "data_estoque":"2026-10-21",
@@ -537,7 +537,7 @@
     "total_base_dia":467,
     "novos_entrantes":1,
     "saidas_base":5,
-    "baixas_arquivo":0
+    "baixas_arquivo":1
   },
   {
     "data_estoque":"2026-10-21",
@@ -557,7 +557,7 @@
     "total_base_dia":6393,
     "novos_entrantes":3,
     "saidas_base":16,
-    "baixas_arquivo":2
+    "baixas_arquivo":35
   },
   {
     "data_estoque":"2026-10-21",
@@ -567,7 +567,7 @@
     "total_base_dia":806,
     "novos_entrantes":0,
     "saidas_base":6,
-    "baixas_arquivo":0
+    "baixas_arquivo":2
   },
   {
     "data_estoque":"2026-10-21",
@@ -587,7 +587,7 @@
     "total_base_dia":11022,
     "novos_entrantes":1,
     "saidas_base":20,
-    "baixas_arquivo":0
+    "baixas_arquivo":48
   },
   {
     "data_estoque":"2026-10-21",
@@ -597,7 +597,7 @@
     "total_base_dia":2095,
     "novos_entrantes":2,
     "saidas_base":11,
-    "baixas_arquivo":0
+    "baixas_arquivo":1
   },
   {
     "data_estoque":"2026-10-21",
@@ -607,7 +607,7 @@
     "total_base_dia":9160,
     "novos_entrantes":1,
     "saidas_base":0,
-    "baixas_arquivo":0
+    "baixas_arquivo":2
   },
   {
     "data_estoque":"2026-10-21",
@@ -617,7 +617,7 @@
     "total_base_dia":26749,
     "novos_entrantes":25,
     "saidas_base":42,
-    "baixas_arquivo":0
+    "baixas_arquivo":49
   },
   {
     "data_estoque":"2026-10-21",
@@ -647,7 +647,7 @@
     "total_base_dia":8939,
     "novos_entrantes":3,
     "saidas_base":12,
-    "baixas_arquivo":1
+    "baixas_arquivo":10
   },
   {
     "data_estoque":"2026-10-21",
@@ -677,7 +677,7 @@
     "total_base_dia":17262,
     "novos_entrantes":1,
     "saidas_base":12,
-    "baixas_arquivo":1
+    "baixas_arquivo":11
   },
   {
     "data_estoque":"2026-10-21",
@@ -697,7 +697,7 @@
     "total_base_dia":20312,
     "novos_entrantes":2,
     "saidas_base":12,
-    "baixas_arquivo":0
+    "baixas_arquivo":7
   },
   {
     "data_estoque":"2026-10-21",
@@ -717,7 +717,7 @@
     "total_base_dia":19833,
     "novos_entrantes":3,
     "saidas_base":18,
-    "baixas_arquivo":1
+    "baixas_arquivo":8
   },
   {
     "data_estoque":"2026-10-20",
