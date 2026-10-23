@@ -1,12 +1,492 @@
 [
   {
+    "data_estoque":"2026-10-23",
+    "carteira":"Amigável",
+    "faixa_atraso":"A. 61 a 90",
+    "tag_contrato":"No Tag",
+    "total_base_dia":538,
+    "novos_entrantes":1,
+    "saidas_base":0,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Amigável",
+    "faixa_atraso":"A. 61 a 90",
+    "tag_contrato":"renegotiation_ptp",
+    "total_base_dia":5,
+    "novos_entrantes":1,
+    "saidas_base":2,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Amigável",
+    "faixa_atraso":"A. 61 a 90",
+    "tag_contrato":"renegotiaton_loan_unclear",
+    "total_base_dia":1949,
+    "novos_entrantes":2,
+    "saidas_base":4,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Amigável",
+    "faixa_atraso":"A. 61 a 90",
+    "tag_contrato":"renegotiaton_yes",
+    "total_base_dia":6700,
+    "novos_entrantes":11,
+    "saidas_base":36,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Amigável",
+    "faixa_atraso":"A. 61 a 90",
+    "tag_contrato":"renegotiaton_yes,renegotiation_ptp",
+    "total_base_dia":9,
+    "novos_entrantes":0,
+    "saidas_base":3,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Amigável",
+    "faixa_atraso":"B. 91 a 120",
+    "tag_contrato":"No Tag",
+    "total_base_dia":471,
+    "novos_entrantes":0,
+    "saidas_base":0,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Amigável",
+    "faixa_atraso":"B. 91 a 120",
+    "tag_contrato":"renegotiaton_loan_unclear",
+    "total_base_dia":2360,
+    "novos_entrantes":2,
+    "saidas_base":1,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Amigável",
+    "faixa_atraso":"B. 91 a 120",
+    "tag_contrato":"renegotiaton_yes",
+    "total_base_dia":6425,
+    "novos_entrantes":25,
+    "saidas_base":20,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Amigável",
+    "faixa_atraso":"C. 121 a 180",
+    "tag_contrato":"No Tag",
+    "total_base_dia":804,
+    "novos_entrantes":1,
+    "saidas_base":2,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Amigável",
+    "faixa_atraso":"C. 121 a 180",
+    "tag_contrato":"renegotiaton_loan_unclear",
+    "total_base_dia":4467,
+    "novos_entrantes":0,
+    "saidas_base":2,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Amigável",
+    "faixa_atraso":"C. 121 a 180",
+    "tag_contrato":"renegotiaton_yes",
+    "total_base_dia":10998,
+    "novos_entrantes":36,
+    "saidas_base":38,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Amigável",
+    "faixa_atraso":"D. 181 a 360",
+    "tag_contrato":"No Tag",
+    "total_base_dia":2102,
+    "novos_entrantes":2,
+    "saidas_base":1,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Amigável",
+    "faixa_atraso":"D. 181 a 360",
+    "tag_contrato":"renegotiaton_loan_unclear",
+    "total_base_dia":9251,
+    "novos_entrantes":0,
+    "saidas_base":5,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Amigável",
+    "faixa_atraso":"D. 181 a 360",
+    "tag_contrato":"renegotiaton_yes",
+    "total_base_dia":26833,
+    "novos_entrantes":48,
+    "saidas_base":73,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Hard",
+    "faixa_atraso":"E. 361 a 420",
+    "tag_contrato":"No Tag",
+    "total_base_dia":707,
+    "novos_entrantes":0,
+    "saidas_base":0,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Hard",
+    "faixa_atraso":"E. 361 a 420",
+    "tag_contrato":"renegotiaton_loan_unclear",
+    "total_base_dia":2882,
+    "novos_entrantes":0,
+    "saidas_base":0,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Hard",
+    "faixa_atraso":"E. 361 a 420",
+    "tag_contrato":"renegotiaton_yes",
+    "total_base_dia":8820,
+    "novos_entrantes":5,
+    "saidas_base":7,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Hard",
+    "faixa_atraso":"F. 421 a 540",
+    "tag_contrato":"No Tag",
+    "total_base_dia":1349,
+    "novos_entrantes":0,
+    "saidas_base":0,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Hard",
+    "faixa_atraso":"F. 421 a 540",
+    "tag_contrato":"renegotiaton_loan_unclear",
+    "total_base_dia":626,
+    "novos_entrantes":0,
+    "saidas_base":0,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Hard",
+    "faixa_atraso":"F. 421 a 540",
+    "tag_contrato":"renegotiaton_yes",
+    "total_base_dia":17368,
+    "novos_entrantes":13,
+    "saidas_base":14,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Hard",
+    "faixa_atraso":"G. 541 a 720",
+    "tag_contrato":"No Tag",
+    "total_base_dia":1498,
+    "novos_entrantes":1,
+    "saidas_base":0,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Hard",
+    "faixa_atraso":"G. 541 a 720",
+    "tag_contrato":"renegotiaton_yes",
+    "total_base_dia":20302,
+    "novos_entrantes":15,
+    "saidas_base":19,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Hard",
+    "faixa_atraso":"H. 721+",
+    "tag_contrato":"No Tag",
+    "total_base_dia":9178,
+    "novos_entrantes":14,
+    "saidas_base":8,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-23",
+    "carteira":"Hard",
+    "faixa_atraso":"H. 721+",
+    "tag_contrato":"renegotiaton_yes",
+    "total_base_dia":19761,
+    "novos_entrantes":11,
+    "saidas_base":20,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Amigável",
+    "faixa_atraso":"A. 61 a 90",
+    "tag_contrato":"No Tag",
+    "total_base_dia":535,
+    "novos_entrantes":2,
+    "saidas_base":3,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Amigável",
+    "faixa_atraso":"A. 61 a 90",
+    "tag_contrato":"renegotiation_ptp",
+    "total_base_dia":4,
+    "novos_entrantes":0,
+    "saidas_base":0,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Amigável",
+    "faixa_atraso":"A. 61 a 90",
+    "tag_contrato":"renegotiaton_loan_unclear",
+    "total_base_dia":1950,
+    "novos_entrantes":4,
+    "saidas_base":3,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Amigável",
+    "faixa_atraso":"A. 61 a 90",
+    "tag_contrato":"renegotiaton_yes",
+    "total_base_dia":6731,
+    "novos_entrantes":4,
+    "saidas_base":35,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Amigável",
+    "faixa_atraso":"A. 61 a 90",
+    "tag_contrato":"renegotiaton_yes,renegotiation_ptp",
+    "total_base_dia":10,
+    "novos_entrantes":0,
+    "saidas_base":2,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Amigável",
+    "faixa_atraso":"B. 91 a 120",
+    "tag_contrato":"No Tag",
+    "total_base_dia":472,
+    "novos_entrantes":0,
+    "saidas_base":1,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Amigável",
+    "faixa_atraso":"B. 91 a 120",
+    "tag_contrato":"renegotiaton_loan_unclear",
+    "total_base_dia":2359,
+    "novos_entrantes":1,
+    "saidas_base":2,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Amigável",
+    "faixa_atraso":"B. 91 a 120",
+    "tag_contrato":"renegotiaton_yes",
+    "total_base_dia":6419,
+    "novos_entrantes":1,
+    "saidas_base":19,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Amigável",
+    "faixa_atraso":"C. 121 a 180",
+    "tag_contrato":"No Tag",
+    "total_base_dia":805,
+    "novos_entrantes":0,
+    "saidas_base":0,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Amigável",
+    "faixa_atraso":"C. 121 a 180",
+    "tag_contrato":"renegotiaton_loan_unclear",
+    "total_base_dia":4469,
+    "novos_entrantes":1,
+    "saidas_base":1,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Amigável",
+    "faixa_atraso":"C. 121 a 180",
+    "tag_contrato":"renegotiaton_yes",
+    "total_base_dia":11000,
+    "novos_entrantes":9,
+    "saidas_base":26,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Amigável",
+    "faixa_atraso":"D. 181 a 360",
+    "tag_contrato":"No Tag",
+    "total_base_dia":2102,
+    "novos_entrantes":1,
+    "saidas_base":3,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Amigável",
+    "faixa_atraso":"D. 181 a 360",
+    "tag_contrato":"renegotiaton_loan_unclear",
+    "total_base_dia":9257,
+    "novos_entrantes":0,
+    "saidas_base":1,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Amigável",
+    "faixa_atraso":"D. 181 a 360",
+    "tag_contrato":"renegotiaton_yes",
+    "total_base_dia":26857,
+    "novos_entrantes":6,
+    "saidas_base":62,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Hard",
+    "faixa_atraso":"E. 361 a 420",
+    "tag_contrato":"No Tag",
+    "total_base_dia":707,
+    "novos_entrantes":0,
+    "saidas_base":0,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Hard",
+    "faixa_atraso":"E. 361 a 420",
+    "tag_contrato":"renegotiaton_loan_unclear",
+    "total_base_dia":2882,
+    "novos_entrantes":0,
+    "saidas_base":0,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Hard",
+    "faixa_atraso":"E. 361 a 420",
+    "tag_contrato":"renegotiaton_yes",
+    "total_base_dia":8822,
+    "novos_entrantes":1,
+    "saidas_base":6,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Hard",
+    "faixa_atraso":"F. 421 a 540",
+    "tag_contrato":"No Tag",
+    "total_base_dia":1349,
+    "novos_entrantes":0,
+    "saidas_base":0,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Hard",
+    "faixa_atraso":"F. 421 a 540",
+    "tag_contrato":"renegotiaton_loan_unclear",
+    "total_base_dia":626,
+    "novos_entrantes":0,
+    "saidas_base":0,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Hard",
+    "faixa_atraso":"F. 421 a 540",
+    "tag_contrato":"renegotiaton_yes",
+    "total_base_dia":17369,
+    "novos_entrantes":1,
+    "saidas_base":6,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Hard",
+    "faixa_atraso":"G. 541 a 720",
+    "tag_contrato":"No Tag",
+    "total_base_dia":1496,
+    "novos_entrantes":0,
+    "saidas_base":0,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Hard",
+    "faixa_atraso":"G. 541 a 720",
+    "tag_contrato":"renegotiaton_yes",
+    "total_base_dia":20307,
+    "novos_entrantes":4,
+    "saidas_base":9,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Hard",
+    "faixa_atraso":"H. 721+",
+    "tag_contrato":"No Tag",
+    "total_base_dia":9169,
+    "novos_entrantes":3,
+    "saidas_base":5,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-22",
+    "carteira":"Hard",
+    "faixa_atraso":"H. 721+",
+    "tag_contrato":"renegotiaton_yes",
+    "total_base_dia":19773,
+    "novos_entrantes":0,
+    "saidas_base":10,
+    "baixas_arquivo":0
+  },
+  {
     "data_estoque":"2026-10-21",
     "carteira":"Amigável",
     "faixa_atraso":"A. 61 a 90",
     "tag_contrato":"No Tag",
-    "total_base_dia":548,
-    "novos_entrantes":3,
-    "saidas_base":10,
+    "total_base_dia":553,
+    "novos_entrantes":22,
+    "saidas_base":8,
     "baixas_arquivo":0
   },
   {
@@ -24,9 +504,9 @@
     "carteira":"Amigável",
     "faixa_atraso":"A. 61 a 90",
     "tag_contrato":"renegotiaton_loan_unclear",
-    "total_base_dia":1959,
-    "novos_entrantes":4,
-    "saidas_base":3,
+    "total_base_dia":1998,
+    "novos_entrantes":98,
+    "saidas_base":2,
     "baixas_arquivo":0
   },
   {
@@ -34,9 +514,9 @@
     "carteira":"Amigável",
     "faixa_atraso":"A. 61 a 90",
     "tag_contrato":"renegotiaton_yes",
-    "total_base_dia":6978,
-    "novos_entrantes":10,
-    "saidas_base":54,
+    "total_base_dia":6964,
+    "novos_entrantes":195,
+    "saidas_base":32,
     "baixas_arquivo":2
   },
   {
@@ -44,7 +524,17 @@
     "carteira":"Amigável",
     "faixa_atraso":"A. 61 a 90",
     "tag_contrato":"renegotiaton_yes,renegotiation_ptp",
-    "total_base_dia":10,
+    "total_base_dia":12,
+    "novos_entrantes":1,
+    "saidas_base":3,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-21",
+    "carteira":"Amigável",
+    "faixa_atraso":"B. 91 a 120",
+    "tag_contrato":"No Tag",
+    "total_base_dia":467,
     "novos_entrantes":1,
     "saidas_base":5,
     "baixas_arquivo":0
@@ -53,20 +543,10 @@
     "data_estoque":"2026-10-21",
     "carteira":"Amigável",
     "faixa_atraso":"B. 91 a 120",
-    "tag_contrato":"No Tag",
-    "total_base_dia":491,
-    "novos_entrantes":0,
-    "saidas_base":6,
-    "baixas_arquivo":0
-  },
-  {
-    "data_estoque":"2026-10-21",
-    "carteira":"Amigável",
-    "faixa_atraso":"B. 91 a 120",
     "tag_contrato":"renegotiaton_loan_unclear",
-    "total_base_dia":2590,
+    "total_base_dia":2365,
     "novos_entrantes":1,
-    "saidas_base":2,
+    "saidas_base":0,
     "baixas_arquivo":0
   },
   {
@@ -74,9 +554,9 @@
     "carteira":"Amigável",
     "faixa_atraso":"B. 91 a 120",
     "tag_contrato":"renegotiaton_yes",
-    "total_base_dia":6790,
-    "novos_entrantes":25,
-    "saidas_base":28,
+    "total_base_dia":6393,
+    "novos_entrantes":3,
+    "saidas_base":16,
     "baixas_arquivo":2
   },
   {
@@ -84,7 +564,7 @@
     "carteira":"Amigável",
     "faixa_atraso":"C. 121 a 180",
     "tag_contrato":"No Tag",
-    "total_base_dia":777,
+    "total_base_dia":806,
     "novos_entrantes":0,
     "saidas_base":6,
     "baixas_arquivo":0
@@ -94,49 +574,49 @@
     "carteira":"Amigável",
     "faixa_atraso":"C. 121 a 180",
     "tag_contrato":"renegotiaton_loan_unclear",
-    "total_base_dia":4293,
+    "total_base_dia":4513,
     "novos_entrantes":0,
-    "saidas_base":2,
-    "baixas_arquivo":0
-  },
-  {
-    "data_estoque":"2026-10-21",
-    "carteira":"Amigável",
-    "faixa_atraso":"C. 121 a 180",
-    "tag_contrato":"renegotiaton_yes",
-    "total_base_dia":10575,
-    "novos_entrantes":32,
-    "saidas_base":42,
-    "baixas_arquivo":0
-  },
-  {
-    "data_estoque":"2026-10-21",
-    "carteira":"Amigável",
-    "faixa_atraso":"D. 181 a 360",
-    "tag_contrato":"No Tag",
-    "total_base_dia":2082,
-    "novos_entrantes":3,
-    "saidas_base":14,
-    "baixas_arquivo":0
-  },
-  {
-    "data_estoque":"2026-10-21",
-    "carteira":"Amigável",
-    "faixa_atraso":"D. 181 a 360",
-    "tag_contrato":"renegotiaton_loan_unclear",
-    "total_base_dia":9095,
-    "novos_entrantes":1,
     "saidas_base":1,
     "baixas_arquivo":0
   },
   {
     "data_estoque":"2026-10-21",
     "carteira":"Amigável",
+    "faixa_atraso":"C. 121 a 180",
+    "tag_contrato":"renegotiaton_yes",
+    "total_base_dia":11022,
+    "novos_entrantes":1,
+    "saidas_base":20,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-21",
+    "carteira":"Amigável",
+    "faixa_atraso":"D. 181 a 360",
+    "tag_contrato":"No Tag",
+    "total_base_dia":2095,
+    "novos_entrantes":2,
+    "saidas_base":11,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-21",
+    "carteira":"Amigável",
+    "faixa_atraso":"D. 181 a 360",
+    "tag_contrato":"renegotiaton_loan_unclear",
+    "total_base_dia":9160,
+    "novos_entrantes":1,
+    "saidas_base":0,
+    "baixas_arquivo":0
+  },
+  {
+    "data_estoque":"2026-10-21",
+    "carteira":"Amigável",
     "faixa_atraso":"D. 181 a 360",
     "tag_contrato":"renegotiaton_yes",
-    "total_base_dia":26586,
-    "novos_entrantes":68,
-    "saidas_base":94,
+    "total_base_dia":26749,
+    "novos_entrantes":25,
+    "saidas_base":42,
     "baixas_arquivo":0
   },
   {
@@ -144,7 +624,7 @@
     "carteira":"Hard",
     "faixa_atraso":"E. 361 a 420",
     "tag_contrato":"No Tag",
-    "total_base_dia":720,
+    "total_base_dia":713,
     "novos_entrantes":0,
     "saidas_base":2,
     "baixas_arquivo":0
@@ -154,7 +634,7 @@
     "carteira":"Hard",
     "faixa_atraso":"E. 361 a 420",
     "tag_contrato":"renegotiaton_loan_unclear",
-    "total_base_dia":2952,
+    "total_base_dia":2931,
     "novos_entrantes":1,
     "saidas_base":0,
     "baixas_arquivo":0
@@ -164,9 +644,9 @@
     "carteira":"Hard",
     "faixa_atraso":"E. 361 a 420",
     "tag_contrato":"renegotiaton_yes",
-    "total_base_dia":9048,
-    "novos_entrantes":6,
-    "saidas_base":18,
+    "total_base_dia":8939,
+    "novos_entrantes":3,
+    "saidas_base":12,
     "baixas_arquivo":1
   },
   {
@@ -174,7 +654,7 @@
     "carteira":"Hard",
     "faixa_atraso":"F. 421 a 540",
     "tag_contrato":"No Tag",
-    "total_base_dia":1363,
+    "total_base_dia":1343,
     "novos_entrantes":0,
     "saidas_base":6,
     "baixas_arquivo":0
@@ -184,7 +664,7 @@
     "carteira":"Hard",
     "faixa_atraso":"F. 421 a 540",
     "tag_contrato":"renegotiaton_loan_unclear",
-    "total_base_dia":556,
+    "total_base_dia":577,
     "novos_entrantes":0,
     "saidas_base":0,
     "baixas_arquivo":0
@@ -194,9 +674,9 @@
     "carteira":"Hard",
     "faixa_atraso":"F. 421 a 540",
     "tag_contrato":"renegotiaton_yes",
-    "total_base_dia":17499,
-    "novos_entrantes":12,
-    "saidas_base":15,
+    "total_base_dia":17262,
+    "novos_entrantes":1,
+    "saidas_base":12,
     "baixas_arquivo":1
   },
   {
@@ -204,8 +684,8 @@
     "carteira":"Hard",
     "faixa_atraso":"G. 541 a 720",
     "tag_contrato":"No Tag",
-    "total_base_dia":1470,
-    "novos_entrantes":1,
+    "total_base_dia":1496,
+    "novos_entrantes":0,
     "saidas_base":2,
     "baixas_arquivo":0
   },
@@ -214,9 +694,9 @@
     "carteira":"Hard",
     "faixa_atraso":"G. 541 a 720",
     "tag_contrato":"renegotiaton_yes",
-    "total_base_dia":19973,
-    "novos_entrantes":12,
-    "saidas_base":20,
+    "total_base_dia":20312,
+    "novos_entrantes":2,
+    "saidas_base":12,
     "baixas_arquivo":0
   },
   {
@@ -224,9 +704,9 @@
     "carteira":"Hard",
     "faixa_atraso":"H. 721+",
     "tag_contrato":"No Tag",
-    "total_base_dia":9118,
-    "novos_entrantes":2,
-    "saidas_base":13,
+    "total_base_dia":9121,
+    "novos_entrantes":0,
+    "saidas_base":8,
     "baixas_arquivo":0
   },
   {
@@ -234,9 +714,9 @@
     "carteira":"Hard",
     "faixa_atraso":"H. 721+",
     "tag_contrato":"renegotiaton_yes",
-    "total_base_dia":19830,
-    "novos_entrantes":9,
-    "saidas_base":27,
+    "total_base_dia":19833,
+    "novos_entrantes":3,
+    "saidas_base":18,
     "baixas_arquivo":1
   },
   {
