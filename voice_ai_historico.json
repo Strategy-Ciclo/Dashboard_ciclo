@@ -1,0 +1,22 @@
+[
+  {
+    "data_dialogo":"2026-11-03",
+    "total_atendimentos":1672,
+    "total_alo":1672,
+    "total_cpc":42,
+    "total_cpca":37,
+    "total_promessas":1,
+    "promessas_a_vista":0,
+    "promessas_renegociacao":1
+  },
+  {
+    "data_dialogo":"2026-10-30",
+    "total_atendimentos":57,
+    "total_alo":57,
+    "total_cpc":13,
+    "total_cpca":0,
+    "total_promessas":2,
+    "promessas_a_vista":0,
+    "promessas_renegociacao":2
+  }
+]
