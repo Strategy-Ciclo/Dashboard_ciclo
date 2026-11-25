@@ -7,8 +7,8 @@
     "total_cpc":83,
     "total_cpca":81,
     "total_promessas":16,
-    "promessas_a_vista":2,
-    "promessas_renegociacao":0
+    "promessas_a_vista":13,
+    "promessas_renegociacao":3
   },
   {
     "data_dialogo":"2026-11-24",
@@ -40,7 +40,7 @@
     "total_cpc":42,
     "total_cpca":30,
     "total_promessas":6,
-    "promessas_a_vista":4,
+    "promessas_a_vista":5,
     "promessas_renegociacao":1
   },
   {
@@ -73,8 +73,8 @@
     "total_cpc":13,
     "total_cpca":13,
     "total_promessas":3,
-    "promessas_a_vista":0,
-    "promessas_renegociacao":0
+    "promessas_a_vista":1,
+    "promessas_renegociacao":2
   },
   {
     "data_dialogo":"2026-11-19",
@@ -228,7 +228,7 @@
     "total_cpca":31,
     "total_promessas":1,
     "promessas_a_vista":0,
-    "promessas_renegociacao":0
+    "promessas_renegociacao":1
   },
   {
     "data_dialogo":"2026-11-12",
@@ -238,8 +238,8 @@
     "total_cpc":16,
     "total_cpca":16,
     "total_promessas":6,
-    "promessas_a_vista":0,
-    "promessas_renegociacao":0
+    "promessas_a_vista":3,
+    "promessas_renegociacao":3
   },
   {
     "data_dialogo":"2026-11-11",
@@ -250,7 +250,7 @@
     "total_cpca":15,
     "total_promessas":5,
     "promessas_a_vista":3,
-    "promessas_renegociacao":1
+    "promessas_renegociacao":2
   },
   {
     "data_dialogo":"2026-11-11",
@@ -282,7 +282,7 @@
     "total_cpc":28,
     "total_cpca":28,
     "total_promessas":1,
-    "promessas_a_vista":0,
+    "promessas_a_vista":1,
     "promessas_renegociacao":0
   },
   {
