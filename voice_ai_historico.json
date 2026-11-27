@@ -1,5 +1,38 @@
 [
   {
+    "data_dialogo":"2026-11-26",
+    "segmento":"Não classificado",
+    "total_atendimentos":3,
+    "total_alo":3,
+    "total_cpc":0,
+    "total_cpca":0,
+    "total_promessas":0,
+    "promessas_a_vista":0,
+    "promessas_renegociacao":0
+  },
+  {
+    "data_dialogo":"2026-11-26",
+    "segmento":"Amigável",
+    "total_atendimentos":4736,
+    "total_alo":4736,
+    "total_cpc":418,
+    "total_cpca":416,
+    "total_promessas":29,
+    "promessas_a_vista":23,
+    "promessas_renegociacao":6
+  },
+  {
+    "data_dialogo":"2026-11-26",
+    "segmento":"Hard",
+    "total_atendimentos":116,
+    "total_alo":116,
+    "total_cpc":9,
+    "total_cpca":9,
+    "total_promessas":0,
+    "promessas_a_vista":0,
+    "promessas_renegociacao":0
+  },
+  {
     "data_dialogo":"2026-11-25",
     "segmento":"Hard",
     "total_atendimentos":369,
@@ -23,14 +56,14 @@
   },
   {
     "data_dialogo":"2026-11-24",
-    "segmento":"Hard",
-    "total_atendimentos":1943,
-    "total_alo":1943,
-    "total_cpc":37,
-    "total_cpca":36,
-    "total_promessas":0,
-    "promessas_a_vista":0,
-    "promessas_renegociacao":0
+    "segmento":"Amigável",
+    "total_atendimentos":4205,
+    "total_alo":4205,
+    "total_cpc":83,
+    "total_cpca":81,
+    "total_promessas":16,
+    "promessas_a_vista":13,
+    "promessas_renegociacao":3
   },
   {
     "data_dialogo":"2026-11-24",
@@ -45,14 +78,14 @@
   },
   {
     "data_dialogo":"2026-11-24",
-    "segmento":"Amigável",
-    "total_atendimentos":4205,
-    "total_alo":4205,
-    "total_cpc":83,
-    "total_cpca":81,
-    "total_promessas":16,
-    "promessas_a_vista":13,
-    "promessas_renegociacao":3
+    "segmento":"Hard",
+    "total_atendimentos":1943,
+    "total_alo":1943,
+    "total_cpc":37,
+    "total_cpca":36,
+    "total_promessas":0,
+    "promessas_a_vista":0,
+    "promessas_renegociacao":0
   },
   {
     "data_dialogo":"2026-11-23",
@@ -100,17 +133,6 @@
   },
   {
     "data_dialogo":"2026-11-19",
-    "segmento":"Amigável",
-    "total_atendimentos":2216,
-    "total_alo":2216,
-    "total_cpc":30,
-    "total_cpca":30,
-    "total_promessas":3,
-    "promessas_a_vista":2,
-    "promessas_renegociacao":1
-  },
-  {
-    "data_dialogo":"2026-11-19",
     "segmento":"Hard",
     "total_atendimentos":1636,
     "total_alo":1636,
@@ -119,6 +141,17 @@
     "total_promessas":0,
     "promessas_a_vista":0,
     "promessas_renegociacao":0
+  },
+  {
+    "data_dialogo":"2026-11-19",
+    "segmento":"Amigável",
+    "total_atendimentos":2216,
+    "total_alo":2216,
+    "total_cpc":30,
+    "total_cpca":30,
+    "total_promessas":3,
+    "promessas_a_vista":2,
+    "promessas_renegociacao":1
   },
   {
     "data_dialogo":"2026-11-18",
@@ -144,6 +177,17 @@
   },
   {
     "data_dialogo":"2026-11-17",
+    "segmento":"Hard",
+    "total_atendimentos":1757,
+    "total_alo":1757,
+    "total_cpc":28,
+    "total_cpca":26,
+    "total_promessas":1,
+    "promessas_a_vista":1,
+    "promessas_renegociacao":0
+  },
+  {
+    "data_dialogo":"2026-11-17",
     "segmento":"Amigável",
     "total_atendimentos":1866,
     "total_alo":1866,
@@ -154,14 +198,14 @@
     "promessas_renegociacao":4
   },
   {
-    "data_dialogo":"2026-11-17",
-    "segmento":"Hard",
-    "total_atendimentos":1757,
-    "total_alo":1757,
-    "total_cpc":28,
-    "total_cpca":26,
-    "total_promessas":1,
-    "promessas_a_vista":1,
+    "data_dialogo":"2026-11-16",
+    "segmento":"Amigável",
+    "total_atendimentos":1305,
+    "total_alo":1305,
+    "total_cpc":11,
+    "total_cpca":2,
+    "total_promessas":0,
+    "promessas_a_vista":0,
     "promessas_renegociacao":0
   },
   {
@@ -174,17 +218,6 @@
     "total_promessas":2,
     "promessas_a_vista":1,
     "promessas_renegociacao":1
-  },
-  {
-    "data_dialogo":"2026-11-16",
-    "segmento":"Amigável",
-    "total_atendimentos":1305,
-    "total_alo":1305,
-    "total_cpc":11,
-    "total_cpca":2,
-    "total_promessas":0,
-    "promessas_a_vista":0,
-    "promessas_renegociacao":0
   },
   {
     "data_dialogo":"2026-11-14",
@@ -243,17 +276,6 @@
   },
   {
     "data_dialogo":"2026-11-12",
-    "segmento":"Hard",
-    "total_atendimentos":1345,
-    "total_alo":1345,
-    "total_cpc":31,
-    "total_cpca":31,
-    "total_promessas":1,
-    "promessas_a_vista":0,
-    "promessas_renegociacao":1
-  },
-  {
-    "data_dialogo":"2026-11-12",
     "segmento":"Amigável",
     "total_atendimentos":1114,
     "total_alo":1114,
@@ -264,15 +286,15 @@
     "promessas_renegociacao":3
   },
   {
-    "data_dialogo":"2026-11-11",
-    "segmento":"Amigável",
-    "total_atendimentos":1061,
-    "total_alo":1061,
-    "total_cpc":15,
-    "total_cpca":15,
-    "total_promessas":5,
-    "promessas_a_vista":3,
-    "promessas_renegociacao":2
+    "data_dialogo":"2026-11-12",
+    "segmento":"Hard",
+    "total_atendimentos":1345,
+    "total_alo":1345,
+    "total_cpc":31,
+    "total_cpca":31,
+    "total_promessas":1,
+    "promessas_a_vista":0,
+    "promessas_renegociacao":1
   },
   {
     "data_dialogo":"2026-11-11",
@@ -284,6 +306,17 @@
     "total_promessas":0,
     "promessas_a_vista":0,
     "promessas_renegociacao":0
+  },
+  {
+    "data_dialogo":"2026-11-11",
+    "segmento":"Amigável",
+    "total_atendimentos":1061,
+    "total_alo":1061,
+    "total_cpc":15,
+    "total_cpca":15,
+    "total_promessas":5,
+    "promessas_a_vista":3,
+    "promessas_renegociacao":2
   },
   {
     "data_dialogo":"2026-11-10",
@@ -320,17 +353,6 @@
   },
   {
     "data_dialogo":"2026-11-09",
-    "segmento":"Amigável",
-    "total_atendimentos":2493,
-    "total_alo":2493,
-    "total_cpc":31,
-    "total_cpca":31,
-    "total_promessas":7,
-    "promessas_a_vista":5,
-    "promessas_renegociacao":2
-  },
-  {
-    "data_dialogo":"2026-11-09",
     "segmento":"Não classificado",
     "total_atendimentos":1,
     "total_alo":1,
@@ -352,6 +374,28 @@
     "promessas_renegociacao":0
   },
   {
+    "data_dialogo":"2026-11-09",
+    "segmento":"Amigável",
+    "total_atendimentos":2493,
+    "total_alo":2493,
+    "total_cpc":31,
+    "total_cpca":31,
+    "total_promessas":7,
+    "promessas_a_vista":5,
+    "promessas_renegociacao":2
+  },
+  {
+    "data_dialogo":"2026-11-07",
+    "segmento":"Hard",
+    "total_atendimentos":71,
+    "total_alo":71,
+    "total_cpc":0,
+    "total_cpca":0,
+    "total_promessas":0,
+    "promessas_a_vista":0,
+    "promessas_renegociacao":0
+  },
+  {
     "data_dialogo":"2026-11-07",
     "segmento":"Amigável",
     "total_atendimentos":1196,
@@ -363,14 +407,14 @@
     "promessas_renegociacao":1
   },
   {
-    "data_dialogo":"2026-11-07",
+    "data_dialogo":"2026-11-06",
     "segmento":"Hard",
-    "total_atendimentos":71,
-    "total_alo":71,
-    "total_cpc":0,
-    "total_cpca":0,
-    "total_promessas":0,
-    "promessas_a_vista":0,
+    "total_atendimentos":171,
+    "total_alo":171,
+    "total_cpc":3,
+    "total_cpca":3,
+    "total_promessas":1,
+    "promessas_a_vista":1,
     "promessas_renegociacao":0
   },
   {
@@ -385,14 +429,14 @@
     "promessas_renegociacao":6
   },
   {
-    "data_dialogo":"2026-11-06",
-    "segmento":"Hard",
-    "total_atendimentos":171,
-    "total_alo":171,
-    "total_cpc":3,
-    "total_cpca":3,
-    "total_promessas":1,
-    "promessas_a_vista":1,
+    "data_dialogo":"2026-11-05",
+    "segmento":"Não classificado",
+    "total_atendimentos":1,
+    "total_alo":1,
+    "total_cpc":1,
+    "total_cpca":1,
+    "total_promessas":0,
+    "promessas_a_vista":0,
     "promessas_renegociacao":0
   },
   {
@@ -418,26 +462,15 @@
     "promessas_renegociacao":0
   },
   {
-    "data_dialogo":"2026-11-05",
-    "segmento":"Não classificado",
-    "total_atendimentos":1,
-    "total_alo":1,
-    "total_cpc":1,
-    "total_cpca":1,
-    "total_promessas":0,
-    "promessas_a_vista":0,
-    "promessas_renegociacao":0
-  },
-  {
     "data_dialogo":"2026-11-04",
-    "segmento":"Hard",
-    "total_atendimentos":149,
-    "total_alo":149,
-    "total_cpc":2,
-    "total_cpca":1,
-    "total_promessas":0,
-    "promessas_a_vista":0,
-    "promessas_renegociacao":0
+    "segmento":"Amigável",
+    "total_atendimentos":2377,
+    "total_alo":2377,
+    "total_cpc":111,
+    "total_cpca":105,
+    "total_promessas":16,
+    "promessas_a_vista":10,
+    "promessas_renegociacao":6
   },
   {
     "data_dialogo":"2026-11-04",
@@ -452,14 +485,14 @@
   },
   {
     "data_dialogo":"2026-11-04",
-    "segmento":"Amigável",
-    "total_atendimentos":2377,
-    "total_alo":2377,
-    "total_cpc":111,
-    "total_cpca":105,
-    "total_promessas":16,
-    "promessas_a_vista":10,
-    "promessas_renegociacao":6
+    "segmento":"Hard",
+    "total_atendimentos":149,
+    "total_alo":149,
+    "total_cpc":2,
+    "total_cpca":1,
+    "total_promessas":0,
+    "promessas_a_vista":0,
+    "promessas_renegociacao":0
   },
   {
     "data_dialogo":"2026-11-03",
@@ -485,10 +518,10 @@
   },
   {
     "data_dialogo":"2026-10-30",
-    "segmento":"Hard",
-    "total_atendimentos":6,
-    "total_alo":6,
-    "total_cpc":2,
+    "segmento":"Não classificado",
+    "total_atendimentos":2,
+    "total_alo":2,
+    "total_cpc":0,
     "total_cpca":0,
     "total_promessas":0,
     "promessas_a_vista":0,
@@ -496,10 +529,10 @@
   },
   {
     "data_dialogo":"2026-10-30",
-    "segmento":"Não classificado",
-    "total_atendimentos":2,
-    "total_alo":2,
-    "total_cpc":0,
+    "segmento":"Hard",
+    "total_atendimentos":6,
+    "total_alo":6,
+    "total_cpc":2,
     "total_cpca":0,
     "total_promessas":0,
     "promessas_a_vista":0,
